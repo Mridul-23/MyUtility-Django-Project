@@ -1,19 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hehe</title>
-    <link rel="stylesheet" href="home.css">
-</head>
-<body>
-    <nav>
-        <span>
-            <a href="#">Home</a></span>
-            <ul>
-                <li><a href="login">Login</a></li>
-                <li><a href="signup">Signup</a></li>
-            </ul>
-    </nav>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO</title>
+    <link rel="stylesheet" href="home.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+      header {
+        background-color: #24252a;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 5%;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+      .logo {
+        font-size: 32px;
+        font-weight: 700;
+        color: #edf0f1;
+        cursor: pointer;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0;
+      }
+      .nav-links li {
+        margin: 15px 15px;
+      }
+      .nav-links li a {
+        font-size: 18px;
+        font-weight: 500;
+        color: #edf0f1;
+        text-decoration: none;
+        transition: all 0.3s ease-out;
+      }
+      .nav-links li a:hover {
+        color: rgb(133, 84, 165);
+      }
+      .nav-links li:nth-child(3) a {
+        background-color: rgb(133, 84, 165);
+        padding: 10px 15px;
+        border-radius: 30px;
+      }
+      .nav-links li:nth-child(3) a:hover {
+        background-color: rgb(195, 162, 244);
+        color: rgb(72, 41, 79);
+      }
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          align-items: center;
+        }
+        .nav-links {
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+        }
+        .nav-links li {
+          margin: 15px 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo">TODO</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="home" draggable="false">HOME</a></li>
+          <li><a href="login" draggable="false">LOGIN</a></li>
+          <li><a href="signup" draggable="false">SIGNUP</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
 </html>

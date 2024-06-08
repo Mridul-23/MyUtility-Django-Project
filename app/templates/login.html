@@ -57,8 +57,7 @@
         border-radius: 4px;
         margin-top: 10px;
         margin-right: 5px;
-        transition: background-color 0.15s, color 0.15s;
-        display: block;
+        transition: background-color 0.2s, color 0.2s, ease-out 0s;
       }
 
       #submit:hover {
@@ -68,6 +67,7 @@
 
       #submit:active {
         background-color: rgb(74, 53, 105);
+        color:rgb(195, 162, 244)
       }
 
       #back_link {
@@ -92,7 +92,7 @@
         color: white;
         font-weight: bold;
         text-decoration: none;
-        transition: background 0.15s, color 0.15s;
+        transition: background 0.2s, color 0.2s ease-out 0s;
         cursor: pointer;
       }
 
@@ -109,12 +109,12 @@
   </head>
   <body>
     <div class="content-wrapper">
-      <h1>Welcome to this Login page</h1>
+      <h1 >Welcome to this Login page</h1>
       <input id="input_name" type="text" placeholder="Enter username" />
       <input id="input_pass" type="password" placeholder="Enter Password" />
       <div class="button-wrapper">
         <button id="submit">Login</button>
-        <a href="home" id="back_link"> Back </a>
+        <a href="home" id="back_link" draggable="false"> Back </a>
       </div>
     </div>
   </body>
