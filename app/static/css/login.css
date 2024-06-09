@@ -1,0 +1,99 @@
+body {
+    background-image: linear-gradient(to right, black 70%, rgb(36, 30, 30));
+    font-family: Arial;
+    display: flex;
+    margin: 0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+  .content-wrapper {
+    text-align: center;
+  }
+  h1 {
+    color: aliceblue;
+    font-family: Tahoma;
+    font-weight: 900;
+    font-size: 50px;
+    margin-bottom: 50px;
+    text-decoration: underline;
+    margin-top: -18%;
+  }
+
+  #input_name,
+  #input_pass {
+    font-size: 14px;
+    background-color: rgb(36, 30, 30);
+    color: aliceblue;
+    width: 175px;
+    padding: 11px 20px 11px 5px;
+    border-radius: 8px;
+    border: 2px solid black;
+    display: block;
+    margin: 12px auto;
+    font-family: Arial;
+  }
+  .button-wrapper {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #submit {
+    background-color: rgb(121, 82, 179);
+    padding: 9px 18px;
+    color: white;
+    border: 0px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-right: 5px;
+    transition: background-color 0.2s, color 0.2s, ease-out 0s;
+  }
+
+  #submit:hover {
+    background-color: rgb(195, 162, 244);
+    color:rgb(72, 41, 79);
+  }
+
+  #submit:active {
+    background-color: rgb(74, 53, 105);
+    color:rgb(195, 162, 244)
+  }
+
+  #back_link {
+    display: inline-block;
+    padding: 9px 18px;
+    margin-top: 10px;
+    margin-left: 5px;
+    font-size: 14px;
+    border-radius: 4px;
+    background: linear-gradient(
+        to bottom,
+        #323232 0%,
+        #3f3f3f 40%,
+        #1c1c1c 150%
+      ),
+      linear-gradient(
+        to top,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(0, 0, 0, 0.25) 200%
+      );
+    background-blend-mode: multiply;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s ease-out 0s;
+    cursor: pointer;
+  }
+
+  #back_link:hover {
+    color: rgb(108, 117, 125);
+    background: white;
+  }
+
+  #back_link:active {
+    background-color: rgb(69, 60, 60);
+    color: white;
+  }

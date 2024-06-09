@@ -1,120 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Signup Page</title>
-    <style>
-      body {
-        background: url("https://images.unsplash.com/photo-1476842634003-7dcca8f832de"),
-          linear-gradient(to right, #1a1a1a 70%, #242424);
-        background-size: cover;
-        background-position: center;
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-      }
-      .content-wrapper {
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.05),
-          rgba(255, 255, 255, 0)
-        );
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-radius: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        padding: 30px;
-        border-radius: 10px;
-        text-align: center;
-      }
-      h1 {
-        color: #ddd;
-        font-family: Arial, sans-serif;
-        font-weight: bold;
-        font-size: 55px;
-        margin-bottom: 20px;
-        margin-top: 0;
-      }
-      input {
-        font-size: 16px;
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.1),
-          rgba(255, 255, 255, 0)
-        );
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        color: #ddd;
-        width: 300px;
-        padding: 12px;
-        border-radius: 8px;
-        border: none;
-        margin: 10px auto;
-        display: block;
-        box-sizing: border-box;
-      }
-      .button-wrapper {
-        margin-top: 20px;
-      }
-      .clickers {
-        font-size: 16px;
-        padding: 12px 24px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s, opacity 0.15s;
-      }
-      #signup-button {
-        background-color: #6c5ce7;
-        color: white;
-        margin-right: 10px;
-      }
-      #signup-button:hover {
-        background-color: #4834d4;
-      }
-      #signup-button:active {
-        opacity: 0.8;
-      }
-      #back_link {
-        color: #6c5ce7;
-        text-decoration: none;
-      }
-      #back_link:hover {
-        color: #8d82e3;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="content-wrapper">
-      <h1>Sign Up</h1>
-      <form action="#">
-        <input type="text" placeholder="Full Name" />
-        <input type="text" placeholder="Username" />
-        <input type="email" placeholder="Email Address" />
-        <input type="password" placeholder="Password" />
-        <input type="password" placeholder="Confirm Password" />
-        <input type="date" placeholder="Date of Birth" />
-      </form>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup Page</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'signup.css' %}">
+  <style>
+  </style>
+</head>
+
+<body>
+  <div class="content-wrapper">
+    <h1>Sign Up</h1>
+    <form action="signup" method="post">
+      {% csrf_token %}
+      <input type="text" placeholder="Full Name" name="Name/>
+      <input type="text" placeholder="Username" name="Username"/>
+      <input type="email" placeholder="Email Address" name="Email"/>
+      <input type="password" placeholder="Password" name="password"/>
+      <input type="password" placeholder="Confirm Password" name="password"/>
       <div class="button-wrapper">
-        <button class="clickers" id="signup-button" title="Sign Up">
-          Sign Up
-        </button>
-        <a
-          href="login"
-          id="back_link"
-          draggable="false"
-          class="clickers"
-          title="Click to return"
-          >Back to Login</a
-        >
-      </div>
-    </div>
-  </body>
+        <input class="clickers" id="signup-button" title="Sign Up" type="submit" value="Create Account"></input>
+        <a href="login" id="back_link" draggable="false" class="clickers" title="Click to return">Back to Login</a>
+    </form>
+  </div>
+  </div>
+</body>
+
 </html>

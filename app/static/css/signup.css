@@ -1,0 +1,94 @@
+body {
+    background: url("https://images.unsplash.com/photo-1476842634003-7dcca8f832de"),
+      linear-gradient(to right, #1a1a1a 70%, #242424);
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .content-wrapper {
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  h1 {
+    color: #ddd;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 55px;
+    margin-bottom: 20px;
+    margin-top: 0;
+  }
+
+  input {
+    font-size: 16px;
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    color: #ddd;
+    width: 300px;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin: 10px auto;
+    display: block;
+    box-sizing: border-box;
+  }
+
+  .button-wrapper {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .clickers {
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, opacity 0.15s;
+    text-align: center;
+  }
+
+  #signup-button {
+    background-color: #6c5ce7;
+    color: white;
+    margin-right: 10px;
+  }
+
+  #signup-button:hover {
+    background-color: #4834d4;
+  }
+
+  #signup-button:active {
+    opacity: 0.8;
+  }
+
+  #back_link {
+    color: #6c5ce7;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  #back_link:hover {
+    color: #8d82e3;
+  }
