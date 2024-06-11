@@ -1,32 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base_nav.html" %}
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Signup Page</title>
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'signup.css' %}">
-  <style>
-  </style>
-</head>
+{% block title %}Sign Up{% endblock %}
 
-<body>
-  <div class="content-wrapper">
-    <h1>Sign Up</h1>
-    <form action="signup" method="post">
-      {% csrf_token %}
-      <input type="text" placeholder="Full Name" name="Name/>
-      <input type="text" placeholder="Username" name="Username"/>
-      <input type="email" placeholder="Email Address" name="Email"/>
-      <input type="password" placeholder="Password" name="password"/>
-      <input type="password" placeholder="Confirm Password" name="password"/>
-      <div class="button-wrapper">
-        <input class="clickers" id="signup-button" title="Sign Up" type="submit" value="Create Account"></input>
-        <a href="login" id="back_link" draggable="false" class="clickers" title="Click to return">Back to Login</a>
-    </form>
-  </div>
-  </div>
-</body>
+{% block custom_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'signup.css' %}">
+{% endblock %}
 
-</html>
+{% block content %}
+<div class="content-wrapper">
+  <h1 class="heading-signup">Sign Up</h1>
+  <form action="/signup" method="post" class="signup-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="button-wrapper">
+      <input class="clickers" id="signup-button" title="Sign Up" type="submit" value="Create Account">
+      <hr style="opacity: 0.5; margin-top: 1px; margin-bottom: 1px; color: #6c5ce7; border:1px solid #9696f5;">
+      <a href="home" id="back_link" draggable="false" class="clickers" title="Click to return">Back to Home</a>
+    </div>
+  </form>
+</div>
+<script>
+  // JavaScript to change the text content of the label when the page loads
+  document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelector('label[for="id_username"]').textContent = 'Enter Username';
+      document.querySelector('label[for="id_password1"]').textContent = 'Enter Password';
+      document.querySelector('label[for="id_password2"]').textContent = 'Confirm Password';
+  });
+</script>
+{% endblock %}

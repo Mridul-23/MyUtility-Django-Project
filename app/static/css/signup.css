@@ -122,8 +122,8 @@ html, body {
   font-size: 10px;
   color: #bbb;
   margin-top: 5px;
-}
-
+  }
+  
 .signup-form ul {
   padding: 0;
 }
@@ -131,4 +131,5 @@ html, body {
 .signup-form ul li {
   font-size: 10px;
   list-style-type: none;
+  color: #bbb;
 }

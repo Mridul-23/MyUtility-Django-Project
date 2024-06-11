@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TODO</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'home.css' %}" />
-  </head>
-  <body>
-    <header>
-      <h1 class="logo">TODO</h1>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="home" draggable="false">HOME</a></li>
-          <li><a href="login" draggable="false">LOGIN</a></li>
-          <li><a href="signup" draggable="false">SIGNUP</a></li>
-        </ul>
-      </nav>
-    </header>
-  </body>
-</html>
+{% extends "base_nav.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block custom_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %}
+
+{% block content %}
+  <h1>
+    This is the home page.
+  </h1>
+{% endblock %}
