@@ -3,8 +3,13 @@ from django.shortcuts import HttpResponse
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
+from app.forms import TODOForm
+from app.models import TODO
+
 def home(request):
-    return render(request, "home.html")
+    form = TODOForm()
+    todos = TODO.objects.all()
+    return render(request, "home.html",context={'form': form, 'todos': todos})
 
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=100)
@@ -49,4 +54,20 @@ def signup(request):
             if user is not None:
                 return redirect('login')
         else:
-            return render(request, "signup.html", context=context)
+            return render(request, "signup.html", context=context)  
+        
+
+def add_todo(request):
+    if request.user.is_authenticated:
+        user = request.user
+        print(user)
+        form = TODOForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+            todo = form.save(commit=False)
+            todo.user = user
+            todo.save()
+            print(todo)
+            return redirect("home")
+        else: 
+            return render(request , 'home.html' , context={'form' : form})

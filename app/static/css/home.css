@@ -1,3 +1,130 @@
-h1{
+h1 {
     color: skyblue;
+}
+
+.todo-heading {
+    color: azure;
+    font-size: 20px;
+}
+html, body{
+    height: auto;
+}
+
+body{
+        overflow-y: scroll;
+}
+
+.content {
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: row;
+    padding: 20px;
+    z-index: -1;
+}
+
+select {
+    font-size: 16px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    color: #ddd;
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    outline: none;
+    margin: 5px 0 10px 0;
+}
+
+select option {
+    background: rgba(0, 0, 0, 0.85);
+    color: #ddd;
+    padding: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 16px;
+}
+
+select option:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+.table-container {
+    margin: 20px 0;
+    width: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: left;
+    color: #ddd;
+}
+
+table thead th {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+}
+
+table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+.table-heading {
+    text-align: center;
+    color: azure;
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+    .content{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .content-wrapper {
+        padding: 10px;
+    }
+
+    .todo-heading {
+        font-size: 1.5em;
+    }
+    .button-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }

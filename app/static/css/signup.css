@@ -3,9 +3,10 @@ html, body {
 }
 
 .content {
-  background: url("https://images.unsplash.com/photo-1476842634003-7dcca8f832de"), linear-gradient(to right, #1a1a1a 70%, #242424);
-  background-size: cover;
+  /* background: url("https://images.unsplash.com/photo-1476842634003-7dcca8f832de"), linear-gradient(to right, #1a1a1a 70%, #242424); */
+  background: url('https://images.unsplash.com/photo-1620641788421-7a1c342ea42e');
   background-position: center;
+  background-size: cover;
   background-attachment: fixed;
   display: flex;
   justify-content: center;
@@ -55,11 +56,11 @@ html, body {
   margin-bottom: 5px;
 }
 
-.signup-form input {
+.signup-form input, 
+input {
   font-size: 16px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   color: #ddd;
@@ -84,18 +85,25 @@ html, body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s, opacity 0.15s;
+  transition: background-color 0.3s, color 0.3s, opacity 0.15s, scale 0.3s;
   text-align: center;
+  font-weight: bold;
 }
 
 #signup-button {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: transparent;
+  color: rgb(141, 130, 227);
+  padding: 13px 24px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   margin-bottom: 10px;
+  border: none;
+  transition: all 0.3s;
 }
 
 #signup-button:hover {
   background-color: var(--primary-hover-color);
+  color: rgb(72, 41, 79);
+  scale: 1.05;
 }
 
 #signup-button:active {
@@ -105,17 +113,11 @@ html, body {
 #back_link {
   color: var(--secondary-color);
   text-decoration: none;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 #back_link:hover {
   color: var(--secondary-hover-color);
-}
-
-.separator {
-  opacity: 0.5;
-  margin: 1px 0;
-  color: var(--primary-color);
-  border: 1px solid #9696f5;
 }
 
 .helptext {
@@ -132,4 +134,11 @@ html, body {
   font-size: 10px;
   list-style-type: none;
   color: #bbb;
+}
+
+#submit{
+  width: auto;
+  text-align: center;
+  margin: auto;
+  color: rgb(141, 130, 227);
 }

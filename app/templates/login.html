@@ -5,11 +5,12 @@
 {% block custom_css %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'login.css' %}">
+<link rel="stylesheet" href="{% static 'signup.css' %}">
 {% endblock %}
 
 {% block content %}
 <div class="content-wrapper">
-    <h1 class="login-heading">Welcome to this Login Page</h1>
+    <h1 class="login-heading">Welcome Back to TODO</h1>
     <form action="/login" method="post">
         {% csrf_token %}
         <div>

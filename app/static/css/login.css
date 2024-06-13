@@ -8,7 +8,6 @@
 }
 
 .content-wrapper {
-  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,51 +18,38 @@
   color: aliceblue;
   font-family: Tahoma;
   font-weight: 900;
-  font-size: 50px;
+  font-size: 35px;
   margin: 20px;
   margin-top: 35px;
-  max-width: 450px;
   text-decoration: underline;
-}
-
-#input_name,
-#input_pass {
-  font-size: 18px;
-  background-color: rgb(36, 30, 30);
-  color: aliceblue;
-  width: 200px;
-  padding: 13px 20px 13px 5px;
-  border-radius: 8px;
-  border: 2px solid black;
-  display: block;
-  margin: 12px auto;
-  font-family: Arial;
 }
 
 .button-wrapper {
   text-align: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
 }
 
 #submit {
-  background-color: rgb(121, 82, 179);
+  color: rgb(95, 134, 207);
   padding: 9px 18px;
-  color: white;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   border: 0px;
   font-weight: bold;
   cursor: pointer;
   border-radius: 4px;
   margin-top: 10px;
   margin-right: 5px;
-  transition: background-color 0.2s, color 0.2s, ease-out 0s;
+  transition: all 0.3s;
 }
 
 #submit:hover {
-  background-color: rgb(195, 162, 244);
+  background-color: var(--primary-hover-color);
   color: rgb(72, 41, 79);
+  scale: 1.1;
 }
 
 #submit:active {
@@ -76,36 +62,25 @@
   display: inline-block;
   padding: 9px 18px;
   margin-top: 10px;
-  margin-left: 5px;
-  font-size: 14px;
+  color: rgb(141, 130, 227);
+  font-size: 16px;
+  text-align: center;
   border-radius: 4px;
-  background: linear-gradient(to bottom,
-      #323232 0%,
-      #3f3f3f 40%,
-      #1c1c1c 150%),
-    linear-gradient(to top,
-      rgba(255, 255, 255, 0.4) 0%,
-      rgba(0, 0, 0, 0.25) 200%);
-  background-blend-mode: multiply;
-  color: white;
   font-weight: bold;
   text-decoration: none;
-  transition: background 0.2s, color 0.2s ease-out 0s;
+  transition: background 0.3s, color 0.3s, scale 0.3s;
   cursor: pointer;
 }
 
 #back_link:hover {
-  color: rgb(108, 117, 125);
-  background: white;
-}
-
-#back_link:active {
-  background-color: rgb(69, 60, 60);
-  color: white;
+  scale: 1.1;
 }
 
 @media (max-width: 768px) {
   .login-heading {
     margin: 10% 0px;
+  }
+  .content-wrapper{
+    margin-top: 20px;
   }
 }

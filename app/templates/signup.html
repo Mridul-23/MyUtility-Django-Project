@@ -15,13 +15,13 @@
     {{ form.as_p }}
     <div class="button-wrapper">
       <input class="clickers" id="signup-button" title="Sign Up" type="submit" value="Create Account">
-      <hr style="opacity: 0.5; margin-top: 1px; margin-bottom: 1px; color: #6c5ce7; border:1px solid #9696f5;">
       <a href="home" id="back_link" draggable="false" class="clickers" title="Click to return">Back to Home</a>
     </div>
   </form>
 </div>
+
+
 <script>
-  // JavaScript to change the text content of the label when the page loads
   document.addEventListener('DOMContentLoaded', (event) => {
       document.querySelector('label[for="id_username"]').textContent = 'Enter Username';
       document.querySelector('label[for="id_password1"]').textContent = 'Enter Password';

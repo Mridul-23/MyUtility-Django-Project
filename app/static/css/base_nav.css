@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: #6c5ce7;
-  --primary-hover-color: #4834d4;
+  --primary-hover-color: rgb(195, 162, 244);
   --secondary-color: #6c5ce7;
   --secondary-hover-color: #8d82e3;
   --background-color: #24252a;
@@ -24,6 +24,12 @@ html, body {
   width: 100%;
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
+  background: url('https://images.unsplash.com/photo-1620641788421-7a1c342ea42e');
+  background-position: center;
+}
+html{
+    
+    scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {

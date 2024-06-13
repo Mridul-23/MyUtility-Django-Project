@@ -4,11 +4,52 @@
 
 {% block custom_css %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'home.css' %}">
+<link rel="stylesheet" href="{% static 'login.css' %}">
+<link rel="stylesheet" href="{% static 'signup.css' %}">
+<link rel="stylesheet" href="{% static 'home.css' %}?{% now "U" %}">
 {% endblock %}
 
 {% block content %}
-  <h1>
-    This is the home page.
-  </h1>
+<div class="main">
+  <div class="content-wrapper">
+    <h2 class="todo-heading">Add new TODO</h2>
+    <form action="/add-todo" method="post" class="signup-form">
+        {% csrf_token %}
+        {{form.as_p}}
+        <div class="button-wrapper">
+          <input class="clickers" id="signup-button" type="submit" value="Add new">
+        </div>           
+    </form>
+  </div>
+</div>
+
+<div class="todo-list">
+  <h2 class="table-heading" style="margin-top: 20px;">
+    Your TODOs
+  </h2>
+  <div class="table-container">
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for todo in todos %}
+          <tr>
+            <td style="font-weight: bold;">{{forloop.counter}}</td>
+            <td>{{todo.title}}</td>
+            <td>{{todo.status}}</td>
+            <td>{{todo.priority}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 {% endblock %}
