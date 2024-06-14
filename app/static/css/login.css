@@ -14,6 +14,25 @@
   flex-direction: column;
 }
 
+#input_name,
+#input_pass {
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.102);
+  color: aliceblue;
+  width: 175px;
+  padding: 11px 20px 11px 5px;
+  border-radius: 8px;
+  /* border: 2px solid black; */
+  display: block;
+  margin: 12px auto;
+  font-family: Arial;
+}
+
+::placeholder{
+  color: rgba(203, 255, 255, 0.27);
+  
+}
+
 .login-heading {
   color: aliceblue;
   font-family: Tahoma;
@@ -24,13 +43,13 @@
   text-decoration: underline;
 }
 
-.button-wrapper {
+#login-buttons {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
 #submit {

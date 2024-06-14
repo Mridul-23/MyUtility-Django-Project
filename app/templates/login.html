@@ -25,7 +25,7 @@
                 <p style="color:red;">{{ form.errors.password }}</p>
             {% endif %}
         </div>
-        <div class="button-wrapper">
+        <div class="button-wrapper" id="login-buttons">
             <input id="submit" type="submit" value="Login">
             <a href="{% url 'home' %}" id="back_link" draggable="false"> Back </a>
         </div>          
