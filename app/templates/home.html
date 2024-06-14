@@ -45,7 +45,7 @@
               <th>Title</th>
               <th>Status</th>
               <th>Priority</th>
-              <th>Delete</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -53,9 +53,24 @@
             <tr>
               <td style="font-weight: bold;">{{forloop.counter}}</td>
               <td>{{todo.title}}</td>
-              <td>{{todo.status}}</td>
+              <td>
+                {% if todo.status == 'C' %}
+                ✅ ({{todo.status}})
+              </td>
+                {% else %}
+                🕒 ({{todo.status}})
+              </td>
+                {% endif %}
+              </td>
               <td>{{todo.priority}}</td>
-              <td><a href="/delete-todo/{{todo.id}}" class="delete-button">Delete</a></td>
+              <td class="action-td">
+                <a href="/delete-todo/{{todo.id}}" class="delete-button" draggable="false">Delete</a>
+                {% if todo.status == 'P' %}
+                <a href="/change-status/{{todo.id}}/C" title="Mark Completed" class="st" draggable="false">✅</a>
+                {% else %}
+                <a href="/change-status/{{todo.id}}/P" title="Mark Pending" class="st" draggable="false">🕒</a>
+                {% endif %}
+              </td>
             </tr>
             {% endfor %}
           </tbody>

@@ -107,6 +107,13 @@ table tbody tr:hover {
     margin: 20px 0;
 }
 
+.action-td{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .delete-button {
     background-color: #ff5c5c82;
     color: #fff;
@@ -121,8 +128,18 @@ table tbody tr:hover {
 
 .delete-button:hover {
     background-color: #FF5C5C;
-    scale: 1.1;
+    scale: 1.08;
     color:#ffffff;
+}
+
+.st{
+    text-decoration: none;
+    margin-left: 4px;
+    transition: all 0.3s;
+}
+
+.st:hover{
+    scale:1.4;
 }
 
 @media (max-width: 600px) {

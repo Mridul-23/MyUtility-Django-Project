@@ -80,6 +80,12 @@ def delete_todo(request, id):
     TODO.objects.get(pk=id).delete()
     return redirect('home')
 
+def change_todo(request, id, status):
+    todo = TODO.objects.get(pk=id)
+    todo.status = status
+    todo.save()
+    return redirect('home')
+
 def signout(request):
     logout(request)
     return redirect("login")
