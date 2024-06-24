@@ -90,7 +90,7 @@ header {
   color: var(--nav-link-hover-color);
 }
 
-.nav-links li:nth-child(3) a {
+.nav-links li:nth-child(2) a , .nav-links li:only-child a{
   background-color: var(--nav-link-bg);
   padding: 10px 15px;
   border-radius: 30px;

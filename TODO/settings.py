@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-dgol-05unlz2+6=e$+72)loy!#2c+yrkhhxn)0w$$l+g7o7fg@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -48,6 +48,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "app.middleware.Handle404Middleware",
 ]
 
 ROOT_URLCONF = "TODO.urls"
@@ -121,6 +122,8 @@ STATICFILES_DIRS = [
     BASE_DIR / "app" / "static" / "css",
     BASE_DIR / "app" / "static" / "images",
 ]
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

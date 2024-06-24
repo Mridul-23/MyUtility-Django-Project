@@ -1,0 +1,19 @@
+{% extends "base_nav.html" %}
+
+{% block title %}Login{% endblock %}
+        
+{% block custom_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'home_icons.css' %}">
+<link rel="stylesheet" href="{% static 'signup.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="icons">
+        <div class="todo-icon">
+            <a href="home"></a>
+        </div>
+    </div>
+</div>
+{% endblock %}

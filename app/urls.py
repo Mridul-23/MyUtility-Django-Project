@@ -2,11 +2,12 @@
 from django.contrib import admin
 from django.urls import path
 from app.views import home, login, signup, add_todo, delete_todo, change_todo, signout
+from django.conf.urls import handler404
+from django.shortcuts import render
 
 
 urlpatterns = [
     path("", home, name = 'home'),
-    path("home", home),
     path("login", login, name = 'login'),
     path("signup", signup, name = 'signup'),
     path("logout", signout),

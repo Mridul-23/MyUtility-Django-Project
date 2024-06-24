@@ -1,3 +1,11 @@
+.content {
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: row;
+    padding: 20px;
+    z-index: -1;
+}
+
 h1 {
     color: skyblue;
 }
@@ -9,14 +17,6 @@ h1 {
 
 body{
         overflow-y: scroll;
-}
-
-.content {
-    align-items: flex-start;
-    justify-content: space-around;
-    flex-direction: row;
-    padding: 20px;
-    z-index: -1;
 }
 
 select {

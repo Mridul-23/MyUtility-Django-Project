@@ -6,19 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{% block title %}My Site{% endblock %}</title>
   {% load static %}
-  <link rel="stylesheet" href="{% static 'base_nav.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'base_nav.css' %}">
   <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
   {% block custom_css %}{% endblock %}
 </head>
 
 <body>
   <header>
-    <a href="home" id="logo2home">
+    <a href="" id="logo2home">
         <h1 class="logo">TODO</h1>
     </a>
     <nav>
       <ul class="nav-links">
-        <li><a href="home" draggable="false">HOME</a></li>
         {% if request.user.is_authenticated %}
         <li><a href="logout" draggable="false">LOGOUT</a></li>
         {% else %}
