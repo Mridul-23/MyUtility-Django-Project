@@ -41,6 +41,7 @@
           <tr>
             <th>#</th>
             <th>TITLE</th>
+            <th>PREVIEW</th>
             <th>DELETE</th>
           </tr>
         </thead>
@@ -49,6 +50,9 @@
           <tr class="note-row" data-content="{{ note.content }}">
             <td style="font-weight: bold;">{{ forloop.counter }}</td>
             <td>{{ note.title }}</td>
+            <td>
+              <button class="preview-button" data-title="{{ note.title }}" data-content="{{ note.content }}">Preview</button>
+            </td>
             <td>
               <a href="{% url 'notes:delete_note' note.id %}" class="delete-button" draggable="false">Delete</a>
             </td>
