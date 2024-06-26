@@ -1,0 +1,58 @@
+{% extends "base_nav.html" %}
+
+{% block title %}Home{% endblock %}
+        
+{% block custom_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% if request.user.is_authenticated %}
+        <div class="welcome-message">Welcome, {{ user.username }}</div>
+        {% endif  %}
+        <div class="description">Navigate through the various tools to manage your tasks, notes, calculations, and weather updates.</div>
+        
+        <div class="icon-wrapper">
+            <div class="icon-section">
+                <a href="{% url 'todo:todo_home' %}" class="icon-anchor" draggable="false">
+                    <div class="todo-icon">
+                        <i class='fas fa-tasks'></i>
+                    </div>
+                </a>
+                <p>Manage your To-Do List</p>
+            </div>
+
+            <div class="icon-section">
+                <a href="{% url 'notes:notes' %}" class="icon-anchor" draggable="false">
+                    <div class="todo-icon">
+                        <i class="fa-solid fa-note-sticky"></i>
+                    </div>
+                </a>
+                <p>Write and Organize Notes</p>
+            </div>
+
+            <div class="icon-section">
+                <a href="{% url 'calc:calc' %}" class="icon-anchor" draggable="false">
+                    <div class="todo-icon">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                </a>
+                <p>Use the Calculator App</p>
+            </div>
+
+            <div class="icon-section">
+                <a href="{% url 'weather:get_weather' %}" class="icon-anchor" draggable="false">
+                    <div class="todo-icon">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                </a>
+                <p>Check Weather Updates</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/5de24f2f58.js" crossorigin="anonymous"></script>
+{% endblock %}

@@ -1,0 +1,65 @@
+.content {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.weather-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-form p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+}
+  
+.weather-form label {
+    font-size: 12px;
+    color: #ffffff;
+    letter-spacing: 0.25mm;
+    margin-bottom: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+input{
+    text-align: center;
+}
+
+.title{
+    color: #ddd;
+    font-weight: bold;
+    font-size: 55px;
+    margin: 20px 0;
+}
+
+.card {
+    width: 300px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border-radius: 20px;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+.card h2 {
+    margin: 0 0 23px;
+}
+.card p {
+    margin: 5px 0;
+}
+.weather-icon {
+    width: 50px;
+}

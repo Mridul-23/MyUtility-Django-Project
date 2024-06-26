@@ -1,0 +1,27 @@
+{% extends "base_nav.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block custom_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+  <h1 class="heading-signup">Sign Up</h1>
+  <form action="{% url 'signup' %}" method="post" class="signup-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="button-wrapper">
+      <input class="clickers" id="signup-button" title="Sign Up" type="submit" value="Create Account">
+      <a href="{% url 'home' %}" id="back_link" draggable="false" class="clickers" title="Click to return">Back to Home</a>
+    </div>
+  </form>
+</div>
+
+
+<script>
+
+</script>
+{% endblock %}

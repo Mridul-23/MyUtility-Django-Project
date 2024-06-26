@@ -1,0 +1,75 @@
+{% extends "base_nav.html" %}
+
+{% block title %}Notes{% endblock %}
+
+{% block custom_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+<link rel="stylesheet" href="{% static 'css/todo-home.css' %}">
+<link rel="stylesheet" href="{% static 'css/notes.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main">
+  <div class="content-wrapper">
+    <h2 class="notes-heading">Add new Note</h2>
+    <form action="{% url 'notes:add_note' %}" method="post" class="signup-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="button-wrapper">
+        <input class="clickers" id="signup-button" type="submit" value="Add new">
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="notes-list">
+  <h2 class="table-heading" style="margin-top: 20px;">
+    Your Notes
+  </h2>
+  {% if notes|length == 0 %}
+  <div id="no-note" class="content-wrapper" style="margin: auto;">
+    <h1>
+      No Notes Yet
+    </h1>
+  </div>
+  {% else %}
+  <div class="table-container">
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>TITLE</th>
+            <th>DELETE</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for note in notes %}
+          <tr class="note-row" data-content="{{ note.content }}">
+            <td style="font-weight: bold;">{{ forloop.counter }}</td>
+            <td>{{ note.title }}</td>
+            <td>
+              <a href="{% url 'notes:delete_note' note.id %}" class="delete-button" draggable="false">Delete</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+<div class="preview-window" id="preview-window">
+  <div class="close-button" id="close-button">✖</div>
+  <div id="preview-content">
+    <h2 id="preview-title"></h2>
+    <div id="preview-note"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/notes.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base_nav.html" %}
+
+{% block title %}Weather{% endblock %}
+
+{% block custom_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+<link rel="stylesheet" href="{% static 'css/todo-home.css' %}">
+<link rel="stylesheet" href="{% static 'css/weather.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1 class="title">Weather App</h1>
+<form class="weather-form" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="clickers" id="search-button" type="submit">Get Weather</button>
+</form>
+{% if weather_data %}
+<div class="card">
+    {% if weather_data.error %}
+        <p>{{ weather_data.error }}</p>
+    {% else %}
+        <h2>{{ weather_data.city }}</h2>
+        <p>Temperature: {{ weather_data.temperature }}°C</p>
+        <p>Description: {{ weather_data.description }}</p>
+        <img src="http://openweathermap.org/img/wn/{{ weather_data.icon }}@2x.png" alt="Weather icon" class="weather-icon">
+    {% endif %}
+</div>
+{% endif %}
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/weather.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "base_nav.html" %}
+
+{% block title %}Todo{% endblock %}
+
+{% block custom_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+<link rel="stylesheet" href="{% static 'css/todo-home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main">
+  <div class="content-wrapper">
+    <h2 class="todo-heading">Add new TODO</h2>
+    <form action="{% url 'todo:add_todo' %}" method="post" class="signup-form">
+        {% csrf_token %}
+        {{form.as_p}}
+        <div class="button-wrapper">
+          <input class="clickers" id="add-button" type="submit" value="Add new">
+        </div>           
+    </form>
+  </div>
+</div>
+
+<div class="todo-list">
+  <h2 class="table-heading" style="margin-top: 20px;">
+    Your TODOs
+  </h2>
+  {% if todos|length == 0 %}
+    <div id="no-todo" class="content-wrapper" style="margin: auto;">
+      <h1>
+        No Todos Yet
+      </h1>
+    </div>
+
+  {% else %}
+    <div class="table-container">
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>Status</th>
+              <th>Priority</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for todo in todos %}
+            <tr>
+              <td style="font-weight: bold;">{{forloop.counter}}</td>
+              <td>{{todo.title}}</td>
+              <td>
+                {% if todo.status == 'C' %}
+                ✅ ({{todo.status}})
+              </td>
+                {% else %}
+                🕒 ({{todo.status}})
+              </td>
+                {% endif %}
+              </td>
+              <td>{{todo.priority}}</td>
+              <td class="action-td">
+                <a href="{% url 'todo:delete_todo' todo.id %}" class="delete-button" draggable="false">Delete</a>
+                {% if todo.status == 'P' %}
+                <a href="{% url 'todo:change_todo' todo.id 'C' %}" title="Mark Completed" class="st" draggable="false">✅</a>
+                {% else %}
+                <a href="{% url 'todo:change_todo' todo.id 'P' %}" title="Mark Pending" class="st" draggable="false">🕒</a>
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

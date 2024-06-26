@@ -1,0 +1,40 @@
+{% extends "base_nav.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block custom_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+    <h1 class="login-heading">Welcome Back to this App</h1>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <div>
+            <input id="input_name" name="username" type="text" placeholder="Enter username" value="{{ request.POST.username }}" />
+            {% if form.errors.username %}
+                <p style="color:red;">{{ form.errors.username }}</p>
+            {% endif %}
+        </div>
+        <div>
+            <input id="input_pass" name="password" type="password" placeholder="Enter Password" />
+            {% if form.errors.password %}
+                <p style="color:red;">{{ form.errors.password }}</p>
+            {% endif %}
+        </div>
+        <div class="button-wrapper" id="login-buttons">
+            <input id="submit" type="submit" value="Login">
+            <a href="{% url 'home' %}" id="back_link" draggable="false"> Back </a>
+        </div>          
+    </form>
+    {% if error %}
+        <p style="color:rgb(255, 69, 69); font-family: Helvetica, Arial; width: 15%">{{ error }}</p>
+    {% endif %}
+</div>
+{% endblock %}
+{% block extra_js %}
+<script src="{% static 'js/signup.js' %}"></script>
+{% endblock %}

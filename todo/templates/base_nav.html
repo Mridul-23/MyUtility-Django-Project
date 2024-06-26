@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}My Site{% endblock %}</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base_nav.css' %}">
+  <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
+  {% block custom_css %}{% endblock %}
+</head>
+
+<body>
+  <header>
+    <a href="/" id="logo2home">
+        <h1 class="logo">MY APP</h1>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        {% if request.user.is_authenticated %}
+        <li><a href="{% url 'logout' %}" draggable="false">LOGOUT</a></li>
+        {% else %}
+        <li><a href="{% url 'login' %}" draggable="false">LOGIN</a></li>
+        <li><a href="{% url 'signup' %}" draggable="false">SIGNUP</a></li>
+        {% endif  %}
+      </ul>
+    </nav>
+  </header>
+
+  <div class="content">
+    {% block content %}
+    {% endblock %}
+  </div>
+  
+  {% block extra_js %}{% endblock %}
+</body>
+
+</html>

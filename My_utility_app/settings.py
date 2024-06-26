@@ -37,8 +37,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "apps.todo",
+    "todo",
+    "notes",
+    "calc",
+    'weather',
 ]
+
+LOGIN_URLS = "todo:login"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -48,7 +53,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "apps.todo.middleware.Handle404Middleware",
+    "todo.middleware.Handle404Middleware",
 ]
 
 ROOT_URLCONF = "My_utility_app.urls"
@@ -119,8 +124,10 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [
-    BASE_DIR / "apps" / "todo" / "static" / "css",
-    BASE_DIR / "apps" / "todo" / "static" / "images",
+    BASE_DIR / "todo" / "static",
+    BASE_DIR / "notes" / "static",
+    BASE_DIR / "calc" / "static",
+    BASE_DIR / "weather" / "static",
 ]
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
